@@ -10,3 +10,25 @@ app.use(
 );
 app.use(cors());
 app.use(bodyParser.json());
+
+mongoose
+  .connect(
+    "mongodb+srv://shubv92:iloverakhi@align-mind.xukbk.mongodb.net/test?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+    }
+  )
+  .then((res) => {
+    console.log("Connected to MongoDB...");
+  })
+  .catch((err) =>{
+        console.log("Error", err)
+  })
+
+app.get("/", (req, res) => {
+  res.send("Hello my World Rakhi");
+});
+
+app.listen(port, () =>
+  console.log(`Server running on port ${port}`)
+);
