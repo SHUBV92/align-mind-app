@@ -1,7 +1,13 @@
 import React from "react"
-import Input from "./component/input"
+import Button from "./component/Button"
 
 const App = () => {
+  
+
+
+
+
+  
   return (
     <div className="App">    
     <h1>Align Mind</h1>
