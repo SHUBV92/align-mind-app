@@ -2,7 +2,7 @@ import React from "react";
 
 const Input = (props) => {
 
-    const {onSubmit, label, type, placeholder, name, onChange} = props
+    const {onSubmit, label, type, placeholder, name, value, onChange, className} = props
 
   return (
     <div>
@@ -13,6 +13,7 @@ const Input = (props) => {
           placeholder={placeholder}
           name={name}
           onChange={onChange}
+          className={className}
         />
       </form>
     </div>
