@@ -4,7 +4,7 @@ import { setCurrentUser } from "./redux/actions";
 
 const App = ({ setUser, currentuser }) => {
   useEffect(() => {
-    setUser({ name: "Rakhi Bitchingssss" });
+    setUser({ name: "Rakhi is such a Betch" });
   }, []);
 
   return (
