@@ -2,9 +2,9 @@ const defaultState = {
   currentUser: {},
 };
 
-function reducer(state = defaultState, action) {
-  console.log("Reducer Payload", action.payload)
-    switch (action.type) {
+const reducer = (state = defaultState, action) => {
+  console.log("Reducer Payload", action.payload);
+  switch (action.type) {
     case "SET_USER":
       return {
         ...state,
