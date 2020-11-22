@@ -1,9 +1,15 @@
 import React from "react";
 
-const Input = (props) => {
-
-    const {onSubmit, label, type, placeholder, name, value, onChange, className} = props
-
+const Input = ({
+  onSubmit,
+  label,
+  type,
+  placeholder,
+  name,
+  value,
+  onChange,
+  className,
+}) => {
   return (
     <div>
       <form onSubmit={onSubmit}>
