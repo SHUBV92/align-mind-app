@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "../../component/Button.jsx";
 import Input from "../../component/Input.jsx";
-import { Container, InputField } from "./Login-page.styles";
+import { Container, InputField } from "./LoginPage.styles";
 
 const Login = () => {
   const [userDetails, setUserDetails] = useState({ name: "Shubs", email: "" });
@@ -20,7 +20,7 @@ const Login = () => {
           label="Full Name"
           type="text"
           placeholder="Name"
-          // value={name}
+          value={userDetails.name}
           onChange={handleChange}
         />
         <br />
