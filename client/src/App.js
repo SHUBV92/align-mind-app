@@ -1,9 +1,14 @@
+// packages
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
-
+// components
+import Login from "./containers/LoginPage/LoginPage";
+import Entrance from "./containers/Entrance";
+// redux
 import { setCurrentUser } from "./redux/actions";
-import Login from "./container/LoginPage/LoginPage";
+// styles
+import { Container } from "./App.styles";
 
 const App = ({ setUser, currentuser }) => {
   useEffect(() => {
@@ -11,26 +16,21 @@ const App = ({ setUser, currentuser }) => {
   }, []);
 
   return (
-    <Router>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-      <Link to="/signup">Signup</Link>
-      <Switch>
-        <Route path="/" exact>
-          <div>
-            <h1>Align Mind</h1>
-            <p>User: {currentuser.name}</p>
+    <Container>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Entrance />
+          </Route>
+          <Route path="/login" exact>
             <Login />
-          </div>
-        </Route>
-        <Route path="/login" exact>
-          <div>Login</div>
-        </Route>
-        <Route path="/signup" exact>
-          <div>Signup</div>
-        </Route>
-      </Switch>
-    </Router>
+          </Route>
+          <Route path="/signup" exact>
+            <div>Signup</div>
+          </Route>
+        </Switch>
+      </Router>
+    </Container>
   );
 };
 

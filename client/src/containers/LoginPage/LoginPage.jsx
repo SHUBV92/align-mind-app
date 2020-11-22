@@ -1,6 +1,11 @@
+// packages
 import React, { useState } from "react";
-import Button from "../../component/Button";
-import Input from "../../component/Input";
+
+// components
+import Button from "../../components/Button";
+import Input from "../../components/Input";
+
+// styles
 import { Container, InputField } from "./LoginPage.styles";
 
 const Login = () => {
@@ -16,7 +21,6 @@ const Login = () => {
         <h1>Login</h1>
         <hr />
         <Input
-          className="input"
           label="Full Name"
           type="text"
           placeholder="Name"
@@ -25,14 +29,14 @@ const Login = () => {
         />
         <br />
         <Input
-          className="input"
           label="Email"
           type="email"
           placeholder="Email Address"
+          value=""
           onChange={handleChange}
         />
         <br />
-        <Button name="Submit" />
+        <Button>Submit</Button>
       </InputField>
     </Container>
   );

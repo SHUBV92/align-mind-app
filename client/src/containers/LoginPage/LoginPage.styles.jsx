@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  padding: 200px;
+  /* padding: 200px; */
 `;
 
 export const InputField = styled.div`
@@ -12,7 +12,7 @@ export const InputField = styled.div`
     padding-left: 150px;
   }
 
-  .input {
+  input {
     padding: 20x;
   }
 
