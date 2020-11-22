@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Button from "../../component/Button.jsx";
-import Input from "../../component/Input.jsx";
+import Button from "../../component/Button";
+import Input from "../../component/Input";
 import { Container, InputField } from "./LoginPage.styles";
 
 const Login = () => {
