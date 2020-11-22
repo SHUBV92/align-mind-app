@@ -3,7 +3,6 @@ const defaultState = {
 };
 
 const reducer = (state = defaultState, action) => {
-  console.log("Reducer Payload", action.payload);
   switch (action.type) {
     case "SET_USER":
       return {
@@ -13,6 +12,6 @@ const reducer = (state = defaultState, action) => {
     default:
       return state;
   }
-}
+};
 
 export default reducer;

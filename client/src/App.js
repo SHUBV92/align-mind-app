@@ -1,16 +1,18 @@
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/actions";
+import Login from "./container/login-page/Login-Page";
 
 const App = ({ setUser, currentuser }) => {
   useEffect(() => {
-    setUser({ name: "Rakhi is such a Betch" });
+    setUser({ name: "Rakhi" });
   }, []);
 
   return (
     <div>
       <h1>Align Mind</h1>
       <p>User: {currentuser.name}</p>
+      <Login />
     </div>
   );
 };
