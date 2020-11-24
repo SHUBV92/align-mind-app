@@ -1,5 +1,5 @@
 // packages
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import { connect } from "react-redux";
 // components
@@ -9,8 +9,12 @@ import Entrance from "./containers/Entrance";
 import { setCurrentUser } from "./redux/actions";
 // styles
 import { Container } from "./App.styles";
+// import Theme from "./Theme";
+import { ThemeContext } from "./redux/store";
 
 const App = ({ setUser, currentuser }) => {
+  const { theme, switchTheme } = useContext(ThemeContext);
+  console.log("APPtheme:", theme);
   useEffect(() => {
     setUser({ name: "Rakhi" });
   }, []);
@@ -30,6 +34,15 @@ const App = ({ setUser, currentuser }) => {
           </Route>
         </Switch>
       </Router>
+      {theme === "dark" ? (
+        <button size={32} onClick={() => switchTheme("light")}>
+          Switch Theme
+        </button>
+      ) : (
+        <button size={32} onClick={() => switchTheme("dark")}>
+          Switch Theme
+        </button>
+      )}
     </Container>
   );
 };
