@@ -3,14 +3,10 @@ import { ThemeProvider, createGlobalStyle } from "styled-components";
 
 const themes = {
   dark: {
-    background: "#272823",
-    title: "#6495ed",
-    text: "#fff",
+    background: "slategray",
   },
   light: {
     background: "#fff",
-    title: "#ff6347",
-    text: "#000",
   },
 };
 
@@ -21,10 +17,11 @@ const GlobalStyle = createGlobalStyle`
       transition: all 0.5s;
     }
   `;
+
 export const ThemeContext = React.createContext();
 
 export const ThemeStore = ({ children }) => {
-  const [theme, switchTheme] = useState("dark");
+  const [theme, switchTheme] = useState("light");
   return (
     <ThemeContext.Provider value={{ switchTheme, theme }}>
       {children}

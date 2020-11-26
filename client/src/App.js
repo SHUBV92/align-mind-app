@@ -8,10 +8,8 @@ import Entrance from "./containers/Entrance";
 // redux
 import { setCurrentUser } from "./redux/actions";
 // styles
-import { Container } from "./App.styles";
+import { Container, Layout, Test } from "./App.styles";
 import { ThemeContext } from "./global-styles/Theme";
-import Card from "./components/Card/Card";
-import { ThemeConsumer } from "styled-components";
 
 const App = ({ setUser, currentuser }) => {
   const { theme, switchTheme } = useContext(ThemeContext);
@@ -24,21 +22,23 @@ const App = ({ setUser, currentuser }) => {
 
   return (
     <Container>
+      <header>Align Mind</header>
       <button onClick={() => switchTheme(checkTheme)}>Switch Theme</button>
-      <Router>
-        <Switch>
-          <Route path="/" exact>
-            <Entrance />
-          </Route>
-          <Route path="/login" exact>
-            <Login />
-          </Route>
-          <Route path="/signup" exact>
-            <div>Signup</div>
-          </Route>
-        </Switch>
-      </Router>
-      <Card />
+      <Layout>
+        <Router>
+          <Switch>
+            <Route path="/" exact>
+              <Entrance />
+            </Route>
+            <Route path="/login" exact>
+              <Login />
+            </Route>
+            <Route path="/signup" exact>
+              <div>Signup</div>
+            </Route>
+          </Switch>
+        </Router>
+      </Layout>
     </Container>
   );
 };
