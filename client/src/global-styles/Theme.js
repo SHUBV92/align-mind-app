@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
       transition: all 0.5s;
     }
   `;
-
 export const ThemeContext = React.createContext();
 
 export const ThemeStore = ({ children }) => {
