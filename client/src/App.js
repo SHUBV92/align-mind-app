@@ -11,6 +11,7 @@ import { setCurrentUser } from "./redux/actions";
 import { Container } from "./App.styles";
 // import Theme from "./Theme";
 import { ThemeContext } from "./redux/store";
+import Card from "./components/Card/Card";
 
 const App = ({ setUser, currentuser }) => {
   const { theme, switchTheme } = useContext(ThemeContext);
@@ -43,6 +44,7 @@ const App = ({ setUser, currentuser }) => {
           Switch Theme
         </button>
       )}
+      <Card />
     </Container>
   );
 };
