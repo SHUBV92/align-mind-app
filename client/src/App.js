@@ -9,19 +9,22 @@ import Entrance from "./containers/Entrance";
 import { setCurrentUser } from "./redux/actions";
 // styles
 import { Container } from "./App.styles";
-// import Theme from "./Theme";
-import { ThemeContext } from "./redux/store";
+import { ThemeContext } from "./global-styles/Theme";
 import Card from "./components/Card/Card";
+import { ThemeConsumer } from "styled-components";
 
 const App = ({ setUser, currentuser }) => {
   const { theme, switchTheme } = useContext(ThemeContext);
-  console.log("APPtheme:", theme);
+
   useEffect(() => {
     setUser({ name: "Rakhi" });
   }, []);
 
+  const checkTheme = theme === "dark" ? "light" : "dark";
+
   return (
     <Container>
+      <button onClick={() => switchTheme(checkTheme)}>Switch Theme</button>
       <Router>
         <Switch>
           <Route path="/" exact>
@@ -35,15 +38,6 @@ const App = ({ setUser, currentuser }) => {
           </Route>
         </Switch>
       </Router>
-      {theme === "dark" ? (
-        <button size={32} onClick={() => switchTheme("light")}>
-          Switch Theme
-        </button>
-      ) : (
-        <button size={32} onClick={() => switchTheme("dark")}>
-          Switch Theme
-        </button>
-      )}
       <Card />
     </Container>
   );

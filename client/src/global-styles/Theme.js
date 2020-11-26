@@ -1,6 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { ThemeContext } from "./redux/store";
 
 const themes = {
   dark: {
@@ -23,9 +22,19 @@ const GlobalStyle = createGlobalStyle`
     }
   `;
 
+export const ThemeContext = React.createContext();
+
+export const ThemeStore = ({ children }) => {
+  const [theme, switchTheme] = useState("dark");
+  return (
+    <ThemeContext.Provider value={{ switchTheme, theme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+};
+
 const Theme = ({ children }) => {
   const { theme } = useContext(ThemeContext); // get the current theme ('light' or 'dark')
-  console.log("Theme.js: ", themes[theme]);
   return (
     <ThemeProvider theme={themes[theme]}>
       {/* <GlobalStyle /> */}

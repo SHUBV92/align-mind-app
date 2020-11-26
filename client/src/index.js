@@ -5,8 +5,8 @@ import reportWebVitals from "./reportWebVitals";
 
 import App from "./App";
 import { store } from "./redux/store";
-import ThemeStore from "./redux/store";
-import Theme from "./Theme";
+import { ThemeStore } from "./global-styles/Theme";
+import Theme from "./global-styles/Theme";
 
 ReactDOM.render(
   <React.StrictMode>
