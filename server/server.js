@@ -5,9 +5,7 @@ const app = express();
 const port = 5000;
 const mongoose = require("mongoose");
 
-app.use(
-  bodyParser.urlencoded({ extended: true })
-);
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -21,14 +19,12 @@ mongoose
   .then((res) => {
     console.log("Connected to MongoDB...");
   })
-  .catch((err) =>{
-        console.log("Error", err)
-  })
+  .catch((err) => {
+    console.log("Error---", err);
+  });
 
 app.get("/", (req, res) => {
   res.send("Hello my World Rakhi");
 });
 
-app.listen(port, () =>
-  console.log(`Server running on port ${port}`)
-);
+app.listen(port, () => console.log(`Server running on port ${port}`));
