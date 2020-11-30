@@ -5,9 +5,6 @@ export const Container = styled.div`
 `;
 
 export const InputField = styled.div`
-  box-shadow: 5px 10px #888888;
-  border: solid #5b6dcd 4px;
-
   h1 {
     padding-left: 150px;
   }

@@ -7,7 +7,6 @@ import { EntranceWrapper } from "./Entrance.styles";
 const Entrance = () => {
   return (
     <EntranceWrapper>
-      <header>Align Mind</header>
       <Link to="/login">Login</Link>
       <Link to="/signup">Signup</Link>
     </EntranceWrapper>

@@ -3,6 +3,7 @@ import React, { useState } from "react";
 
 // components
 import Button from "../../components/Button";
+import Card from "../../components/Card/Card";
 import Input from "../../components/Input";
 
 // styles
@@ -18,25 +19,27 @@ const Login = () => {
   return (
     <Container>
       <InputField>
-        <h1>Login</h1>
-        <hr />
-        <Input
-          label="Full Name"
-          type="text"
-          placeholder="Name"
-          value={userDetails.name}
-          onChange={handleChange}
-        />
-        <br />
-        <Input
-          label="Email"
-          type="email"
-          placeholder="Email Address"
-          value=""
-          onChange={handleChange}
-        />
-        <br />
-        <Button>Submit</Button>
+        <Card>
+          <h1>Login</h1>
+          <hr />
+          <Input
+            label="Full Name"
+            type="text"
+            placeholder="Name"
+            value={userDetails.name}
+            onChange={handleChange}
+          />
+          <br />
+          <Input
+            label="Email"
+            type="email"
+            placeholder="Email Address"
+            value=""
+            onChange={handleChange}
+          />
+          <br />
+          <Button>Submit</Button>
+        </Card>
       </InputField>
     </Container>
   );
